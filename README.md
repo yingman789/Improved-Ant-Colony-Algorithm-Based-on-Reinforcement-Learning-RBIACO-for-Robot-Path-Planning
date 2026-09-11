@@ -50,9 +50,8 @@ Prepare a binary matrix grid_1 where 0 = free cell, 1 = obstacle.
 Define startPos and goalPos as [row, column] indices (1‑based).
 
 Call the function:
+-[bestPath, bestLen, convIter, runTime, bestHistory] = RBIACO_RealTime(grid_1, startPos, goalPos);
 
-matlab
-[bestPath, bestLen, convIter, runTime, bestHistory] = RBIACO_RealTime(grid_1, startPos, goalPos);
 Output Interpretation
 bestPath : Matrix of waypoints (row, col) for the best path found.
 
@@ -65,7 +64,6 @@ runTime : Total execution time (seconds).
 bestHistory: A vector of the best path length recorded at each iteration (useful for convergence plots).
 
 Example
-matlab
 % Load or create your map (here we use a random 30×30 map)
 grid_1 = double(rand(30,30) > 0.7);
 grid_1(1,1) = 0; grid_1(30,30) = 0;
