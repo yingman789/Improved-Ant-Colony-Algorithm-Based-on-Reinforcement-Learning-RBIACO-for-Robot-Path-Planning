@@ -42,17 +42,18 @@ These values have been experimentally tuned for 20×20 to 40×40 maps. You may n
    run_demo
 This will generate a random 20×20 map, run the algorithm, and display the optimal path and convergence curve.
 
-Using Your Own Map
+### Using Your Own Map
 To apply RBIACO to your own grid map:
 
 Prepare a binary matrix grid_1 where 0 = free cell, 1 = obstacle.
 
 Define startPos and goalPos as [row, column] indices (1‑based).
 
-Call the function:
--[bestPath, bestLen, convIter, runTime, bestHistory] = RBIACO_RealTime(grid_1, startPos, goalPos);
+### Call the function:
+  ```matlab
+  [bestPath, bestLen, convIter, runTime, bestHistory] = RBIACO_RealTime(grid_1, startPos, goalPos);
 
-Output Interpretation
+## Output Interpretation
 bestPath : Matrix of waypoints (row, col) for the best path found.
 
 bestLen : Total Euclidean length of the best path.
