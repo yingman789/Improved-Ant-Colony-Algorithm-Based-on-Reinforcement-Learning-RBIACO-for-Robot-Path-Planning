@@ -50,10 +50,10 @@ Prepare a binary matrix grid_1 where 0 = free cell, 1 = obstacle.
 Define startPos and goalPos as [row, column] indices (1‑based).
 
 ### Call the function:
-  ```matlab
-  [bestPath, bestLen, convIter, runTime, bestHistory] = RBIACO_RealTime(grid_1, startPos, goalPos);
+    ```matlab
+    [bestPath, bestLen, convIter, runTime, bestHistory] = RBIACO_RealTime(grid_1, startPos, goalPos);
 
-## Output Interpretation
+### Output Interpretation
 bestPath : Matrix of waypoints (row, col) for the best path found.
 
 bestLen : Total Euclidean length of the best path.
@@ -64,25 +64,25 @@ runTime : Total execution time (seconds).
 
 bestHistory: A vector of the best path length recorded at each iteration (useful for convergence plots).
 
-Example
-% Load or create your map (here we use a random 30×30 map)
-grid_1 = double(rand(30,30) > 0.7);
-grid_1(1,1) = 0; grid_1(30,30) = 0;
-[startPos, goalPos] = deal([1,1], [30,30]);
+### Example
+    ```matlab
+    % Load or create your map (here we use a random 30×30 map)
+    grid_1 = double(rand(30,30) > 0.7);
+    grid_1(1,1) = 0; grid_1(30,30) = 0;
+    [startPos, goalPos] = deal([1,1], [30,30]);
+    % Run algorithm
+    [path, len, iter, time, hist] = RBIACO_RealTime(grid_1, startPos, goalPos);
+    % Display result
+    fprintf('Path length: %.2f, found at iteration %d, time: %.2f s\n', len, iter, time);
 
-% Run algorithm
-[path, len, iter, time, hist] = RBIACO_RealTime(grid_1, startPos, goalPos);
-
-% Display result
-fprintf('Path length: %.2f, found at iteration %d, time: %.2f s\n', len, iter, time);
-Code Structure
+## Code Structure
 RBIACO_RealTime.m – The main algorithm function with extensive comments.
 
 run_demo.m – A self-contained demo script that generates a random map, runs the algorithm, and plots results.
 
 README.md – This file.
 
-Performance Notes
+## Performance Notes
 The algorithm is optimized for maps up to about 100×100. For larger maps, consider increasing maxIter or adjusting parameters.
 
 The Q‑value update has been implemented using a suffix‑distance technique to reduce complexity from O(L²) to O(L) per path.
@@ -90,7 +90,7 @@ The Q‑value update has been implemented using a suffix‑distance technique to
 Contact
 For questions or bug reports, please open an issue on GitHub or contact the corresponding author (see paper).
 
-### Summary of Changes for GitHub Release
+## Summary of Changes for GitHub Release
 
 | Aspect | Implementation |
 |--------|----------------|
